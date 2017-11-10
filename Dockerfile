@@ -2,8 +2,7 @@ FROM google/cloud-sdk
 MAINTAINER Peter Wiggers <peter@bitlayer.nl>
 
 # install pip
-RUN wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py && \
-    python /tmp/get-pip.py
+RUN apt-get update && apt-get install -y python-pip
 
 # install requirements
 COPY requirements.txt /tmp
